@@ -12,9 +12,11 @@ http://localhost:3000/
 npm i axios
 
 
+
 *styled-components*
 
 npm install --save styled-components
+
 
 
 *react-tabs*

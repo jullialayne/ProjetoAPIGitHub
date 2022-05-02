@@ -15,3 +15,6 @@ npm i axios
 *styled-components*
 
 npm install --save styled-components
+
+*react-tabs*
+npm install --save react-tabs

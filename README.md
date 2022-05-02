@@ -1,6 +1,9 @@
 # ProjetoW
 Projeto utilizando ReactJs
 
+# Local
+
+http://localhost:3000/
 
 # Instalações
  

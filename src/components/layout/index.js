@@ -1,19 +1,14 @@
-import React from 'react';
-import * as s from './styled';
+import React from "react";
+import Header from "../header";
+import * as S from "./styled";
 
-const Layout = ({children}) => {
-   
-        return (
-            <s.WrapperLayout>
-                <header>
-                    header
-                </header>
-                {children}
-
-            </s.WrapperLayout>
-        );
-    }
-
-
+const Layout = ({ children }) => {
+  return (
+    <S.WrapperLayout>
+      <Header />
+      {children}
+    </S.WrapperLayout>
+  );
+};
 
 export default Layout;

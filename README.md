@@ -1,6 +1,6 @@
 # ProjetoW
 
-Projeto utilizando ReactJs
+Projeto utilizando ReactJs da Digital Innovation One, utilizando Api do git hub
 
 
 # Local

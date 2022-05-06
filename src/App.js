@@ -2,22 +2,19 @@ import React from "react";
 import Layout from "./components/layout";
 import NoSearch from "./components/no-search";
 import Profile from "./components/profile";
-import Repositories from "./components/repositories";
-import useGithub from "./hooks/github-hooks";
+import useUser from "./hooks/github-hooks";
 
 const App = () => {
-  const { githubState } = useGithub();
+  const { userState } = useUser();
   return (
     <Layout>
-      {githubState.hasUser ? (
+      {userState.hasUser ? (
         <>
-          {githubState.loading ? (
+          {userState.loading ? (
             <p>Loading</p>
           ) : (
             <>
-              <Profile />
-              <Repositories />
-            </>
+              <Profile />   </>
           )}
         </>
       ) : (

@@ -1,4 +1,4 @@
-# ProjetoW
+# Projeto API GitHun
 
 Projeto utilizando ReactJs da Digital Innovation One, utilizando Api do git hub
 

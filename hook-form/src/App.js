@@ -1,23 +1,38 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+    const [ID, setID] = useState(null);
 
-  return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input {...register('firstName')} />
-      <input {...register('lastName', { required: true })} />
-      {errors.lastName && <p>Last name is required.</p>}
-      <input {...register('age', { pattern: /\d+/ })} />
-      {errors.age && <p>Please enter number for age.</p>}
-      <input type="submit" />
-    </form>
-  );
+    useEffect(() => {
+        // POST request using axios inside useEffect React hook
+        const article = {ID_USUARIO:14,
+        "NOME":"Ju",
+        "EMAIL":"Ju123@gmail.com",
+        "CNPJ":"Ju",
+        "RAZAOSOCIAL":"Ju",
+        "TELEFONE":"Ju",
+        "CELULAR":"Ju",
+        "CIDADE":"Ju",
+        "ESTADO":"Ju",
+        "SENHA":"Ju"};
+        axios.post('http://localhost:3333/criaUsuario', article)
+            .then(response => setID(response.data.mensagem))
+            .catch((err) => {
+              console.error("ops! ocorreu um erro" + err);
+            });
+
+    // empty dependency array means this effect will only run once (like componentDidMount in classes)
+    }, []);
+
+    return (
+        <div className="card text-center m-3">
+            <h5 className="card-header">POST Request with React Hooks</h5>
+            <div className="card-body">
+                Returned Id: {ID}
+            </div>
+        </div>
+    );
 }
-export default App;
+
+export default  App ;
